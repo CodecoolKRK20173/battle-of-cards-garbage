@@ -14,6 +14,7 @@ namespace GarbageCardGame.DAO
         public CardDAO(string path)
         {
             Path = path;
+            AllCards = GetDeck();
         }
 
         public List<Card> GetDeck()
