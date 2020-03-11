@@ -12,13 +12,21 @@ namespace GarbageCardGame
         public int Recyclability { get; private set; }
         public int EnergyRecovery { get; private set; }
 
-        public Card(string cardName, int degradability, int recyclability, int toxicity, int energyRecovery)
+        private enum Stats
+        {
+            degradability,
+            toxicity,
+            recyclability,
+            energyRecovery,
+        }
+
+        public Card(string cardName, int[] numericalStats)
         {
             CardName = cardName;
-            Degradability = degradability;
-            Toxicity = toxicity;
-            Recyclability = recyclability;
-            EnergyRecovery = energyRecovery;
+            Degradability = numericalStats[(int)Stats.degradability];
+            Toxicity = numericalStats[(int)Stats.toxicity];
+            Recyclability = numericalStats[(int)Stats.recyclability];
+            EnergyRecovery = numericalStats[(int)Stats.energyRecovery];
         }
     }
 }
