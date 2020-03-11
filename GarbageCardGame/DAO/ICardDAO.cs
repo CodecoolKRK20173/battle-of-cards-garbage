@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GarbageCardGame.Model;
+using System.Collections.Generic;
 
 namespace GarbageCardGame.DAO
 {

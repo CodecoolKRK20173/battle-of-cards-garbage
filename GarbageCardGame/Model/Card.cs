@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GarbageCardGame
+namespace GarbageCardGame.Model
 {
     class Card
     {
