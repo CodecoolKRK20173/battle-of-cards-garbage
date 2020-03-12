@@ -16,6 +16,7 @@ namespace GarbageCardGame
             Console.WriteLine(path);
             
             Deck Talia = new Deck(new CardDAO(path));
+            Talia.Shuffle();
             foreach (var card in Talia.CardDeck)
             {
                 Console.WriteLine($"{card.CardName}, {card.EnergyRecovery}");

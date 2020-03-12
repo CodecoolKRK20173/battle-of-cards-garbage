@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using GarbageCardGame.DAO;
 
@@ -14,6 +15,12 @@ namespace GarbageCardGame.Model
         {
             CardDAO = cardDAO;
             CardDeck = CardDAO.GetDeck();
+        }
+
+        public void Shuffle()
+        {
+            Random rand = new Random();
+            CardDeck = CardDeck.OrderBy(x => rand.Next()).ToList();
         }
     }
 }
