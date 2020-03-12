@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace GarbageCardGame.Model
@@ -34,6 +36,19 @@ namespace GarbageCardGame.Model
         public int CompareTo(object obj)
         {
             throw new NotImplementedException();
+        }
+
+        private class sortCardsByDegradability : IComparer<Card>
+        {
+            public int Compare(Card card1, Card card2)
+            {
+                if (card1.Degradability > card2.Degradability)
+                    return 1;
+                if (card1.Degradability < card2.Degradability)
+                    return -1;
+                else
+                    return 0;
+            }
         }
     }
 }
