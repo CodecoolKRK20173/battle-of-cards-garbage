@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GarbageCardGame.Controller
 {
-    class Game
+    class GameController
     {
     }
 }

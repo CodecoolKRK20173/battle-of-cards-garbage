@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GarbageCardGame.Model
 {
-    class Card
+    class Card : IComparable
     {
         public string CardName { get; private set; }
         public int Degradability { get; private set; }
@@ -27,6 +27,13 @@ namespace GarbageCardGame.Model
             Toxicity = numericalStats[(int)Stats.toxicity];
             Recyclability = numericalStats[(int)Stats.recyclability];
             EnergyRecovery = numericalStats[(int)Stats.energyRecovery];
+        }
+
+        //TODO Implement IComparable
+        //TODO override hashCode() method and equals() method
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
