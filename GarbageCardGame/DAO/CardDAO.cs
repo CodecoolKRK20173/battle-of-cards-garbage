@@ -9,13 +9,11 @@ namespace GarbageCardGame.DAO
 {
     class CardDAO : ICardDAO
     {
-        public List<Card> AllCards { get; private set; }
         private string Path { get; set; }
 
         public CardDAO(string path)
         {
             Path = path;
-            AllCards = GetDeck();
         }
 
         public List<Card> GetDeck()
