@@ -13,6 +13,7 @@ namespace GarbageCardGame.Model
         public int Toxicity { get; private set; }
         public int Recyclability { get; private set; }
         public int EnergyRecovery { get; private set; }
+        public int TotalStatSum { get; private set; }
         public int CompareThisStat { get; set; }
 
         private enum Stats
@@ -30,13 +31,24 @@ namespace GarbageCardGame.Model
             Toxicity = numericalStats[(int)Stats.toxicity];
             Recyclability = numericalStats[(int)Stats.recyclability];
             EnergyRecovery = numericalStats[(int)Stats.energyRecovery];
+            TotalStatSum = Degradability + Toxicity + Recyclability + EnergyRecovery;
         }
 
-        //TODO Implement IComparable
-        //TODO override hashCode() method and equals() method
-        public int CompareTo(Card obj)
+        /// <summary>
+        /// This is the implementation for IComparable interface.
+        /// This method compares the total sum off all card stats.
+        /// It is the default comparer for the Card class which sorts cards in descending order.
+        /// </summary>
+        public int CompareTo(Card other)
         {
-            throw new NotImplementedException();
+            if (this.TotalStatSum < other.TotalStatSum)
+                return 1;
+            if (this.TotalStatSum > other.TotalStatSum)
+                return -1;
+            else
+                return 0;
         }
+
+        //TODO override hashCode() method and equals() method
     }
 }
