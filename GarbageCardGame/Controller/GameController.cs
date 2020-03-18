@@ -10,6 +10,7 @@ namespace GarbageCardGame.Controller
     class GameController
     {
         public Deck GameDeck { get; set; }
+        public Hand TemporaryHand { get; set; }
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
         private IComparer<Card> Comparer { get; set; }
@@ -18,6 +19,8 @@ namespace GarbageCardGame.Controller
         {
             GameDeck = new Deck(new CardDAO(Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.csv"));
             GameDeck.Shuffle();
+
+            TemporaryHand = new Hand();
 
             Player1 = new Player("Player1");
             Player1.Hand.GetHand(GameDeck);
@@ -30,8 +33,8 @@ namespace GarbageCardGame.Controller
         public void PlayRound(Player player1, Player player2)
         {
             PrintCardMenu(player1);
-            PickAStatToCompare(player1, player2);
-            int result = CompareCards(player1, player2);
+            PickAStatToCompare();
+            int result = CompareCards();
             ResolveComparison(result);
         }
 
@@ -39,26 +42,53 @@ namespace GarbageCardGame.Controller
         {
             ViewGarbage View = new ViewGarbage();
             View.Print(player.Hand.CardsInHand[0].ToString());
-            View.Print("\nWhich stat would u like to use for comparison?");
+            View.Print("\nWhich stat would you like to use for comparison?");
         }
-        private void PickAStatToCompare(Player player1, Player player2)
+        private void PickAStatToCompare()
         {
             int initialFalseStatrterValue = -1;
-            int pickedStat = player1.PickStat(initialFalseStatrterValue);
-            player2.PickStat(pickedStat);
+            int pickedStat = Player1.PickStat(initialFalseStatrterValue);
+            Player2.PickStat(pickedStat);
         }
 
-        private int CompareCards(Player player1, Player player2)
+        private int CompareCards()
         {
-            return Comparer.Compare(player1.Hand.CardsInHand[0], player2.Hand.CardsInHand[0]);
+            return Comparer.Compare(Player1.Hand.CardsInHand[0], Player2.Hand.CardsInHand[0]);
         }
 
         private void ResolveComparison(int result)
         {
-            //TODO proper implementation for this method
-            if (result == 1) Console.WriteLine("Player1won");
-            if (result == -1) Console.WriteLine("Player2won");
-            if (result == 0) Console.WriteLine("Draw");
+            ViewGarbage resolver = new ViewGarbage();
+            if (result == 1)
+            {
+                resolver.Print("Player1 won this round");
+                MoveResolvedCards(Player1, Player2);
+            }
+            if (result == -1)
+            {
+                resolver.Print("Player2 won this round");
+                MoveResolvedCards(Player2, Player1);
+            }
+            if (result == 0)
+            {
+                resolver.Print("It was a draw. Game continues...");
+                TemporaryHand.AddCard(Player1.Hand.CardsInHand[0]);
+                TemporaryHand.RemoveCard(Player1.Hand.CardsInHand[0]);
+                TemporaryHand.RemoveCard(Player2.Hand.CardsInHand[0]);
+                TemporaryHand.AddCard(Player1.Hand.CardsInHand[0]);
+            }
+        }
+
+        private void MoveResolvedCards(Player playerA, Player playerB)
+        {
+            playerA.Hand.AddCard(playerA.Hand.CardsInHand[0]);
+            playerA.Hand.RemoveCard(playerA.Hand.CardsInHand[0]);
+            playerA.Hand.AddCard(playerB.Hand.CardsInHand[0]);
+            playerB.Hand.RemoveCard(playerB.Hand.CardsInHand[0]);
+            foreach (var card in TemporaryHand.CardsInHand)
+            {
+                playerA.Hand.AddCard(card);
+            }
         }
 
         public bool AnyPlayerHasWon()

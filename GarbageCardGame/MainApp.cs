@@ -16,7 +16,7 @@ namespace GarbageCardGame
         {
             ViewGarbage View = new ViewGarbage();
             GameController Game = new GameController();
-            View.Print("Welcome to the game.");
+            View.Print("Welcome to the game.\n");
             while (!Game.AnyPlayerHasWon())
             {
                 Game.PlayRound(Game.Player1, Game.Player2);
