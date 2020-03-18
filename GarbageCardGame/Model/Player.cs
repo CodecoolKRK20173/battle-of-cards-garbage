@@ -9,6 +9,12 @@ namespace GarbageCardGame.Model
         public string Name { get; private set; }
         public Hand Hand { get; set; }
 
+        public Player(string name)
+        {
+            Name = name;
+            Hand = new Hand();
+        }
+
         public void PickStat()
         {
             throw new NotImplementedException();
