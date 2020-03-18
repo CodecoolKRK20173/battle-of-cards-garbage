@@ -7,7 +7,7 @@ namespace GarbageCardGame.Model
     class Player
     {
         public string Name { get; private set; }
-        public Hand Hand { get; set; }
+        public Hand Hand { get; private set; }
 
         private readonly List<int> _ValidAnswers = new List<int>
             {

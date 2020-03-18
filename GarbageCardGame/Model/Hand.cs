@@ -7,6 +7,7 @@ namespace GarbageCardGame.Model
     class Hand
     {
         public List<Card> CardsInHand { get; private set; } 
+        private readonly int _NumberOfStartingCards = 5;
 
         public Hand()
         {
@@ -15,7 +16,7 @@ namespace GarbageCardGame.Model
 
         public void GetHand(Deck deck)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < _NumberOfStartingCards; i++)
             {
                 CardsInHand.Add(deck.CardDeck[0]);
                 deck.CardDeck.Remove(deck.CardDeck[0]);
