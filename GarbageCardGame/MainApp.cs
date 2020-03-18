@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using GarbageCardGame.DAO;
 using GarbageCardGame.Model;
+using GarbageCardGame.View;
+using GarbageCardGame.Controller;
 
 namespace GarbageCardGame
 {
@@ -11,6 +13,9 @@ namespace GarbageCardGame
     {
         static void Main(string[] args)
         {
+            ViewGarbage View = new ViewGarbage();
+            GameController Game = new GameController();
+            View.Print("Welcome to the game.");
 
             //TESTING ZONE
             Console.WriteLine("Hello World!");
