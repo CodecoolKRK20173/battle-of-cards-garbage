@@ -6,16 +6,20 @@ namespace GarbageCardGame.Model
 {
     class Hand
     {
-        public List<Card> CardsInHand { get; private set; }
+        public List<Card> CardsInHand { get; private set; } 
 
         public Hand()
         {
-            CardsInHand = GetHand();
+            CardsInHand = new List<Card>();
         }
 
-        private List<Card> GetHand()
+        public void GetHand(Deck deck)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < 5; i++)
+            {
+                CardsInHand.Add(deck.CardDeck[0]);
+                deck.CardDeck.Remove(deck.CardDeck[0]);
+            }
         }
 
         public void AddCard(Card card)
@@ -25,7 +29,7 @@ namespace GarbageCardGame.Model
 
         public void RemoveCard(Card card)
         {
-            throw new NotImplementedException();
+            CardsInHand.Remove(card);
         }
     }
 }
