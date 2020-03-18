@@ -11,16 +11,21 @@ namespace GarbageCardGame
 {
     class MainApp
     {
+        //TODO override hashCode() method and equals() method
         static void Main(string[] args)
         {
             ViewGarbage View = new ViewGarbage();
             GameController Game = new GameController();
             View.Print("Welcome to the game.");
-            View.Print(Game.Player1.Hand.CardsInHand[0].ToString());
+            while (!Game.AnyPlayerHasWon())
+            {
+                Game.PlayRound(Game.Player1, Game.Player2);
+            }
+            
 
 
             //TESTING ZONE
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("=== TEST ZONE ===");
             string path = Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.csv";
             Console.WriteLine(path);
             
