@@ -22,7 +22,7 @@ namespace GarbageCardGame.Controller
 
             TemporaryHand = new Hand();
 
-            Player1 = new Player("Player1");
+            Player1 = new Player("Player1", true);
             Player1.Hand.GetHand(GameDeck);
             Player2 = new Player("Player2");
             Player2.Hand.GetHand(GameDeck);
@@ -32,8 +32,16 @@ namespace GarbageCardGame.Controller
 
         public void PlayRound(Player player1, Player player2)
         {
-            PrintCardMenu(player1);
-            PickAStatToCompare();
+            if (player1.IsActive)
+            {
+                PrintCardMenu(player1);
+                PickAStatToCompare(player1, player2);
+            }
+            else
+            {
+                PrintCardMenu(player2);
+                PickAStatToCompare(player2, player1);
+            }
             int result = CompareCards();
             ResolveComparison(result);
         }
@@ -41,14 +49,15 @@ namespace GarbageCardGame.Controller
         private void PrintCardMenu(Player player)
         {
             ViewGarbage View = new ViewGarbage();
+            View.Print($"{player.Name} is active now:");
             View.Print(player.Hand.CardsInHand[0].ToString());
             View.Print("\nWhich stat would you like to use for comparison?");
         }
-        private void PickAStatToCompare()
+        private void PickAStatToCompare(Player playerA, Player playerB)
         {
             int initialFalseStatrterValue = -1;
-            int pickedStat = Player1.PickStat(initialFalseStatrterValue);
-            Player2.PickStat(pickedStat);
+            int pickedStat = playerA.PickStat(initialFalseStatrterValue);
+            playerB.PickStat(pickedStat);
         }
 
         private int CompareCards()
@@ -63,11 +72,13 @@ namespace GarbageCardGame.Controller
             {
                 resolver.Print("Player1 won this round");
                 MoveResolvedCards(Player1, Player2);
+                ChangeActivePlayer(Player1, Player2);
             }
             if (result == -1)
             {
                 resolver.Print("Player2 won this round");
                 MoveResolvedCards(Player2, Player1);
+                ChangeActivePlayer(Player2, Player1);
             }
             if (result == 0)
             {
@@ -88,7 +99,14 @@ namespace GarbageCardGame.Controller
             foreach (var card in TemporaryHand.CardsInHand)
             {
                 playerA.Hand.AddCard(card);
+                TemporaryHand.RemoveCard(card);
             }
+        }
+
+        private void ChangeActivePlayer(Player playerA, Player playerB)
+        {
+            playerA.IsActive = true;
+            playerB.IsActive = false;
         }
 
         public bool AnyPlayerHasWon()
