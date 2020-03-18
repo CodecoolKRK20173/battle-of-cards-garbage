@@ -16,14 +16,6 @@ namespace GarbageCardGame.Model
         public int TotalStatSum { get; private set; }
         public int CompareThisStat { get; set; }
 
-        private enum Stats
-        {
-            degradability,
-            toxicity,
-            recyclability,
-            energyRecovery,
-        }
-
         public Card(string cardName, int[] numericalStats)
         {
             CardName = cardName;
