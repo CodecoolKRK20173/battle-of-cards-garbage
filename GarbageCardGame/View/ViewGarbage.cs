@@ -8,7 +8,7 @@ namespace GarbageCardGame.View
     {
         public void Print(string text)
         {
-            Console.WriteLine("text");
+            Console.WriteLine(text);
         }
     }
 }

@@ -16,6 +16,8 @@ namespace GarbageCardGame
             ViewGarbage View = new ViewGarbage();
             GameController Game = new GameController();
             View.Print("Welcome to the game.");
+            View.Print(Game.Player1.Hand.CardsInHand[0].ToString());
+
 
             //TESTING ZONE
             Console.WriteLine("Hello World!");

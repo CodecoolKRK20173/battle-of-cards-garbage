@@ -40,7 +40,22 @@ namespace GarbageCardGame.Model
             else
                 return 0;
         }
-
         //TODO override hashCode() method and equals() method
+
+        public override string ToString()
+        {
+            string separatorLine = "====================";
+
+            StringBuilder cardString = new StringBuilder();
+            cardString.AppendLine(separatorLine);
+            cardString.AppendLine(CardName);
+            cardString.AppendLine(separatorLine);
+            cardString.AppendLine($"Degradability = {Degradability}");
+            cardString.AppendLine($"Toxicity = {Toxicity}");
+            cardString.AppendLine($"Recyclability = {Recyclability}");
+            cardString.AppendLine($"Energy Recovery = {EnergyRecovery}");
+            cardString.AppendLine(separatorLine);
+            return cardString.ToString();
+        }
     }
 }
