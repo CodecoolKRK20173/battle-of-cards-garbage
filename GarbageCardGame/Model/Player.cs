@@ -8,6 +8,7 @@ namespace GarbageCardGame.Model
     {
         public string Name { get; private set; }
         public Hand Hand { get; private set; }
+        public bool IsActive { get; set; }
 
         private readonly List<int> _ValidAnswers = new List<int>
             {
@@ -17,10 +18,11 @@ namespace GarbageCardGame.Model
                 (int)Stats.energyRecovery + 1,
             };
 
-        public Player(string name)
+        public Player(string name, bool isActive = false)
         {
             Name = name;
             Hand = new Hand();
+            IsActive = isActive;
         }
 
         public int PickStat(int initialStat)
