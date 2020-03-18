@@ -23,15 +23,30 @@ namespace GarbageCardGame.Model
             Hand = new Hand();
         }
 
-        public int PickStat()
+        public int PickStat(int initialStat)
         {
-            int answer = -1;
-            while (!_ValidAnswers.Contains(answer))
+            int stat = initialStat;
+            while (!_ValidAnswers.Contains(stat))
             {
-                Console.WriteLine("What stat do you chose?");
-                answer = int.Parse(Console.ReadLine());
+                stat = int.Parse(Console.ReadLine());
             }
-            return answer;
+            
+            switch (stat)
+            {
+                case 1:
+                    Hand.CardsInHand[0].CompareThisStat = Hand.CardsInHand[0].Degradability;
+                    break;
+                case 2:
+                    Hand.CardsInHand[0].CompareThisStat = Hand.CardsInHand[0].Toxicity;
+                    break;
+                case 3:
+                    Hand.CardsInHand[0].CompareThisStat = Hand.CardsInHand[0].Recyclability;
+                    break;
+                case 4:
+                    Hand.CardsInHand[0].CompareThisStat = Hand.CardsInHand[0].EnergyRecovery;
+                    break;
+            }
+            return stat;
         }
     }
 }
