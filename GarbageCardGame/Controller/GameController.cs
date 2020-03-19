@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using GarbageCardGame.DAO;
 using GarbageCardGame.Model;
 using GarbageCardGame.View;
@@ -41,6 +40,7 @@ namespace GarbageCardGame.Controller
                 PrintCardMenu(player2);
                 PickAStatToCompare(player2, player1);
             }
+
             if (player1.Hand.CardsInHand[0].CompareThisStat.HasValue)
             {
                 int result = CompareCards();
@@ -58,8 +58,8 @@ namespace GarbageCardGame.Controller
 
         private void PickAStatToCompare(Player playerA, Player playerB)
         {
-            int initialFalseStatrterValue = -1;
-            int pickedStat = playerA.PickStat(initialFalseStatrterValue);
+            int initialFalseStarterValue = -1;
+            int pickedStat = playerA.PickStat(initialFalseStarterValue);
             playerB.PickStat(pickedStat);
         }
 
@@ -114,6 +114,13 @@ namespace GarbageCardGame.Controller
         public bool AnyPlayerHasWon()
         {
             return (Player1.Hand.CardsInHand.Count == 0 || Player2.Hand.CardsInHand.Count == 0) ? true : false;
+        }
+
+        public void EndGameScenario()
+        {
+            string winner = (Player1.Hand.CardsInHand.Count > 0) ? Player1.Name : Player2.Name;
+            Console.Clear();
+            View.Print($"Congratulations {winner}!!!\nYou have won the game.");
         }
     }
 }
