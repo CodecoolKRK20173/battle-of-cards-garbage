@@ -14,7 +14,7 @@ namespace GarbageCardGame.Model
         public int Recyclability { get; private set; }
         public int EnergyRecovery { get; private set; }
         public int TotalStatSum { get; private set; }
-        public int CompareThisStat { get; set; }
+        public int? CompareThisStat { get; set; }
 
         public Card(string cardName, int[] numericalStats)
         {
@@ -24,6 +24,7 @@ namespace GarbageCardGame.Model
             Recyclability = numericalStats[(int)Stats.recyclability];
             EnergyRecovery = numericalStats[(int)Stats.energyRecovery];
             TotalStatSum = Degradability + Toxicity + Recyclability + EnergyRecovery;
+            CompareThisStat = null;
         }
 
         /// <summary>
