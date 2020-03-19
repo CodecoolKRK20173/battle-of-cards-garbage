@@ -14,20 +14,19 @@ namespace GarbageCardGame.Controller
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
         private IComparer<Card> Comparer { get; set; }
+        private ViewGarbage View { get; set; }
 
         public GameController()
         {
             GameDeck = new Deck(new CardDAO(Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.csv"));
             GameDeck.Shuffle();
-
             TemporaryHand = new Hand();
-
             Player1 = new Player("Player1", true);
             Player1.Hand.GetHand(GameDeck);
             Player2 = new Player("Player2");
             Player2.Hand.GetHand(GameDeck);
-
             Comparer = new CardComparer();
+            View = new ViewGarbage();
         }
 
         public void PlayRound(Player player1, Player player2)
@@ -42,17 +41,21 @@ namespace GarbageCardGame.Controller
                 PrintCardMenu(player2);
                 PickAStatToCompare(player2, player1);
             }
-            int result = CompareCards();
-            ResolveComparison(result);
+            if (player1.Hand.CardsInHand[0].CompareThisStat.HasValue)
+            {
+                int result = CompareCards();
+                ResolveComparison(result);
+            }
         }
 
         private void PrintCardMenu(Player player)
         {
-            ViewGarbage View = new ViewGarbage();
-            View.Print($"{player.Name} is active now:");
+            Console.Clear();
+            View.Print($"{player.Name} is active now:\n");
             View.Print(player.Hand.CardsInHand[0].ToString());
             View.Print("\nWhich stat would you like to use for comparison?");
         }
+
         private void PickAStatToCompare(Player playerA, Player playerB)
         {
             int initialFalseStatrterValue = -1;
@@ -67,22 +70,21 @@ namespace GarbageCardGame.Controller
 
         private void ResolveComparison(int result)
         {
-            ViewGarbage resolver = new ViewGarbage();
             if (result == 1)
             {
-                resolver.Print("Player1 won this round");
+                View.Print("Player1 won this round");
                 MoveResolvedCards(Player1, Player2);
                 ChangeActivePlayer(Player1, Player2);
             }
             if (result == -1)
             {
-                resolver.Print("Player2 won this round");
+                View.Print("Player2 won this round");
                 MoveResolvedCards(Player2, Player1);
                 ChangeActivePlayer(Player2, Player1);
             }
             if (result == 0)
             {
-                resolver.Print("It was a draw. Game continues...");
+                View.Print("It was a draw. Game continues...");
                 TemporaryHand.AddCard(Player1.Hand.CardsInHand[0]);
                 TemporaryHand.RemoveCard(Player1.Hand.CardsInHand[0]);
                 TemporaryHand.RemoveCard(Player2.Hand.CardsInHand[0]);
