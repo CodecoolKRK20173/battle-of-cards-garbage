@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GarbageCardGame.View;
 
 namespace GarbageCardGame.Model
 {
@@ -30,7 +31,20 @@ namespace GarbageCardGame.Model
             int stat = initialStat;
             while (!_ValidAnswers.Contains(stat))
             {
-                stat = int.Parse(Console.ReadLine());
+                ViewGarbage error = new ViewGarbage();
+                try
+                {
+                    stat = int.Parse(Console.ReadLine());
+                    if (!_ValidAnswers.Contains(stat)) throw new ArgumentException();
+                }
+                catch (FormatException)
+                {
+                    error.Print("Please enter a value '1', '2', '3', or '4'.");
+                }
+                catch (ArgumentException)
+                {
+                    error.Print("Please enter a value in range 1-4.");
+                }
             }
             
             switch (stat)
