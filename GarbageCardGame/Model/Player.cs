@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using GarbageCardGame.View;
 
 namespace GarbageCardGame.Model
@@ -31,7 +30,6 @@ namespace GarbageCardGame.Model
             int stat = initialStat;
             while (!_ValidAnswers.Contains(stat))
             {
-                ViewGarbage error = new ViewGarbage();
                 try
                 {
                     stat = int.Parse(Console.ReadLine());
@@ -39,14 +37,21 @@ namespace GarbageCardGame.Model
                 }
                 catch (FormatException)
                 {
+                    ViewGarbage error = new ViewGarbage();
                     error.Print("Please enter a value '1', '2', '3', or '4'.");
                 }
                 catch (ArgumentException)
                 {
+                    ViewGarbage error = new ViewGarbage();
                     error.Print("Please enter a value in range 1-4.");
                 }
             }
-            
+            SetCompareToStat(stat);
+            return stat;
+        }
+
+        private void SetCompareToStat(int stat)
+        {
             switch (stat)
             {
                 case 1:
@@ -62,7 +67,6 @@ namespace GarbageCardGame.Model
                     Hand.CardsInHand[0].CompareThisStat = Hand.CardsInHand[0].EnergyRecovery;
                     break;
             }
-            return stat;
         }
     }
 }

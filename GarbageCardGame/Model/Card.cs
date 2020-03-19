@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace GarbageCardGame.Model
@@ -44,7 +41,7 @@ namespace GarbageCardGame.Model
 
         public override string ToString()
         {
-            string separatorLine = "========================";
+            string separatorLine = "|========================|";
 
             StringBuilder cardString = new StringBuilder();
             cardString.AppendLine(separatorLine);

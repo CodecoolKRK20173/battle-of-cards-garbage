@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GarbageCardGame.Model
+﻿namespace GarbageCardGame.Model
 {
     public enum Stats
     {
