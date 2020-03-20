@@ -1,48 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Card>
-    <CardName>Bulky waste</CardName>
-    <Degradability>42</Degradability>
-    <Toxicity>2</Toxicity>
-    <Recyclability>67</Recyclability>
-    <EnergyRecovery>76</EnergyRecovery>
-    <TotalStatSum>187</TotalStatSum>
+    <CardName>Agricultural waste</CardName>
+    <Degradability>90</Degradability>
+    <Toxicity>45</Toxicity>
+    <Recyclability>18</Recyclability>
+    <EnergyRecovery>89</EnergyRecovery>
+    <TotalStatSum>242</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
-    <CardName>Human waste</CardName>
-    <Degradability>88</Degradability>
-    <Toxicity>32</Toxicity>
-    <Recyclability>6</Recyclability>
-    <EnergyRecovery>42</EnergyRecovery>
-    <TotalStatSum>168</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Domestic waste</CardName>
-    <Degradability>25</Degradability>
-    <Toxicity>13</Toxicity>
-    <Recyclability>69</Recyclability>
-    <EnergyRecovery>21</EnergyRecovery>
-    <TotalStatSum>128</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Mineral waste</CardName>
-    <Degradability>17</Degradability>
-    <Toxicity>65</Toxicity>
-    <Recyclability>21</Recyclability>
-    <EnergyRecovery>22</EnergyRecovery>
-    <TotalStatSum>125</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Biomedical waste</CardName>
-    <Degradability>56</Degradability>
-    <Toxicity>81</Toxicity>
-    <Recyclability>2</Recyclability>
-    <EnergyRecovery>9</EnergyRecovery>
-    <TotalStatSum>148</TotalStatSum>
+    <CardName>Animal by-products</CardName>
+    <Degradability>95</Degradability>
+    <Toxicity>35</Toxicity>
+    <Recyclability>15</Recyclability>
+    <EnergyRecovery>72</EnergyRecovery>
+    <TotalStatSum>217</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
@@ -55,84 +28,21 @@
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
-    <CardName>Inorganic waste</CardName>
-    <Degradability>10</Degradability>
-    <Toxicity>77</Toxicity>
-    <Recyclability>23</Recyclability>
-    <EnergyRecovery>16</EnergyRecovery>
-    <TotalStatSum>126</TotalStatSum>
+    <CardName>Biomedical waste</CardName>
+    <Degradability>56</Degradability>
+    <Toxicity>81</Toxicity>
+    <Recyclability>2</Recyclability>
+    <EnergyRecovery>9</EnergyRecovery>
+    <TotalStatSum>148</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
-    <CardName>Industrial waste</CardName>
-    <Degradability>29</Degradability>
-    <Toxicity>47</Toxicity>
-    <Recyclability>57</Recyclability>
-    <EnergyRecovery>61</EnergyRecovery>
-    <TotalStatSum>194</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Sewage</CardName>
-    <Degradability>28</Degradability>
-    <Toxicity>86</Toxicity>
-    <Recyclability>54</Recyclability>
-    <EnergyRecovery>13</EnergyRecovery>
-    <TotalStatSum>181</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Gaseous wastes</CardName>
-    <Degradability>1</Degradability>
-    <Toxicity>89</Toxicity>
-    <Recyclability>15</Recyclability>
-    <EnergyRecovery>3</EnergyRecovery>
-    <TotalStatSum>108</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Consumable waste</CardName>
-    <Degradability>65</Degradability>
-    <Toxicity>39</Toxicity>
-    <Recyclability>79</Recyclability>
-    <EnergyRecovery>28</EnergyRecovery>
-    <TotalStatSum>211</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Commercial waste</CardName>
-    <Degradability>38</Degradability>
-    <Toxicity>26</Toxicity>
-    <Recyclability>56</Recyclability>
-    <EnergyRecovery>45</EnergyRecovery>
-    <TotalStatSum>165</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Packaging waste</CardName>
-    <Degradability>90</Degradability>
-    <Toxicity>1</Toxicity>
-    <Recyclability>78</Recyclability>
-    <EnergyRecovery>67</EnergyRecovery>
-    <TotalStatSum>236</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Municipal solid waste</CardName>
-    <Degradability>13</Degradability>
-    <Toxicity>17</Toxicity>
-    <Recyclability>34</Recyclability>
-    <EnergyRecovery>42</EnergyRecovery>
-    <TotalStatSum>106</TotalStatSum>
-    <CompareThisStat xsi:nil="true" />
-  </Card>
-  <Card>
-    <CardName>Construction and demolition waste</CardName>
-    <Degradability>5</Degradability>
-    <Toxicity>17</Toxicity>
-    <Recyclability>13</Recyclability>
-    <EnergyRecovery>8</EnergyRecovery>
-    <TotalStatSum>43</TotalStatSum>
+    <CardName>Bulky waste</CardName>
+    <Degradability>42</Degradability>
+    <Toxicity>2</Toxicity>
+    <Recyclability>67</Recyclability>
+    <EnergyRecovery>76</EnergyRecovery>
+    <TotalStatSum>187</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
@@ -145,12 +55,111 @@
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
-    <CardName>Organic waste</CardName>
-    <Degradability>82</Degradability>
-    <Toxicity>30</Toxicity>
-    <Recyclability>80</Recyclability>
+    <CardName>Commercial waste</CardName>
+    <Degradability>38</Degradability>
+    <Toxicity>26</Toxicity>
+    <Recyclability>56</Recyclability>
+    <EnergyRecovery>45</EnergyRecovery>
+    <TotalStatSum>165</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Composite waste</CardName>
+    <Degradability>51</Degradability>
+    <Toxicity>49</Toxicity>
+    <Recyclability>73</Recyclability>
+    <EnergyRecovery>81</EnergyRecovery>
+    <TotalStatSum>254</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Construction and demolition waste</CardName>
+    <Degradability>5</Degradability>
+    <Toxicity>17</Toxicity>
+    <Recyclability>13</Recyclability>
+    <EnergyRecovery>8</EnergyRecovery>
+    <TotalStatSum>43</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Consumable waste</CardName>
+    <Degradability>65</Degradability>
+    <Toxicity>39</Toxicity>
+    <Recyclability>79</Recyclability>
+    <EnergyRecovery>28</EnergyRecovery>
+    <TotalStatSum>211</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Domestic waste</CardName>
+    <Degradability>25</Degradability>
+    <Toxicity>13</Toxicity>
+    <Recyclability>69</Recyclability>
+    <EnergyRecovery>21</EnergyRecovery>
+    <TotalStatSum>128</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Electronic waste</CardName>
+    <Degradability>2</Degradability>
+    <Toxicity>85</Toxicity>
+    <Recyclability>36</Recyclability>
+    <EnergyRecovery>14</EnergyRecovery>
+    <TotalStatSum>137</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Food waste</CardName>
+    <Degradability>78</Degradability>
+    <Toxicity>8</Toxicity>
+    <Recyclability>13</Recyclability>
+    <EnergyRecovery>16</EnergyRecovery>
+    <TotalStatSum>115</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Gaseous wastes</CardName>
+    <Degradability>1</Degradability>
+    <Toxicity>89</Toxicity>
+    <Recyclability>15</Recyclability>
+    <EnergyRecovery>3</EnergyRecovery>
+    <TotalStatSum>108</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Green waste</CardName>
+    <Degradability>96</Degradability>
+    <Toxicity>13</Toxicity>
+    <Recyclability>10</Recyclability>
     <EnergyRecovery>82</EnergyRecovery>
-    <TotalStatSum>274</TotalStatSum>
+    <TotalStatSum>201</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Human waste</CardName>
+    <Degradability>88</Degradability>
+    <Toxicity>32</Toxicity>
+    <Recyclability>6</Recyclability>
+    <EnergyRecovery>42</EnergyRecovery>
+    <TotalStatSum>168</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Industrial waste</CardName>
+    <Degradability>29</Degradability>
+    <Toxicity>47</Toxicity>
+    <Recyclability>57</Recyclability>
+    <EnergyRecovery>61</EnergyRecovery>
+    <TotalStatSum>194</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Inorganic waste</CardName>
+    <Degradability>10</Degradability>
+    <Toxicity>77</Toxicity>
+    <Recyclability>23</Recyclability>
+    <EnergyRecovery>16</EnergyRecovery>
+    <TotalStatSum>126</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
@@ -163,6 +172,42 @@
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
+    <CardName>Liquid waste</CardName>
+    <Degradability>42</Degradability>
+    <Toxicity>50</Toxicity>
+    <Recyclability>67</Recyclability>
+    <EnergyRecovery>13</EnergyRecovery>
+    <TotalStatSum>172</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Marine debris</CardName>
+    <Degradability>9</Degradability>
+    <Toxicity>56</Toxicity>
+    <Recyclability>12</Recyclability>
+    <EnergyRecovery>4</EnergyRecovery>
+    <TotalStatSum>81</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Mineral waste</CardName>
+    <Degradability>17</Degradability>
+    <Toxicity>65</Toxicity>
+    <Recyclability>21</Recyclability>
+    <EnergyRecovery>22</EnergyRecovery>
+    <TotalStatSum>125</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Municipal solid waste</CardName>
+    <Degradability>13</Degradability>
+    <Toxicity>17</Toxicity>
+    <Recyclability>34</Recyclability>
+    <EnergyRecovery>42</EnergyRecovery>
+    <TotalStatSum>106</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
     <CardName>Nuclear waste</CardName>
     <Degradability>2</Degradability>
     <Toxicity>100</Toxicity>
@@ -172,12 +217,57 @@
     <CompareThisStat xsi:nil="true" />
   </Card>
   <Card>
-    <CardName>Electronic waste</CardName>
-    <Degradability>2</Degradability>
-    <Toxicity>85</Toxicity>
-    <Recyclability>36</Recyclability>
-    <EnergyRecovery>14</EnergyRecovery>
-    <TotalStatSum>137</TotalStatSum>
+    <CardName>Organic waste</CardName>
+    <Degradability>82</Degradability>
+    <Toxicity>30</Toxicity>
+    <Recyclability>80</Recyclability>
+    <EnergyRecovery>82</EnergyRecovery>
+    <TotalStatSum>274</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Packaging waste</CardName>
+    <Degradability>90</Degradability>
+    <Toxicity>1</Toxicity>
+    <Recyclability>78</Recyclability>
+    <EnergyRecovery>67</EnergyRecovery>
+    <TotalStatSum>236</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Radioactive waste</CardName>
+    <Degradability>4</Degradability>
+    <Toxicity>98</Toxicity>
+    <Recyclability>2</Recyclability>
+    <EnergyRecovery>17</EnergyRecovery>
+    <TotalStatSum>121</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Sewage</CardName>
+    <Degradability>28</Degradability>
+    <Toxicity>86</Toxicity>
+    <Recyclability>54</Recyclability>
+    <EnergyRecovery>13</EnergyRecovery>
+    <TotalStatSum>181</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Ship disposal</CardName>
+    <Degradability>35</Degradability>
+    <Toxicity>21</Toxicity>
+    <Recyclability>63</Recyclability>
+    <EnergyRecovery>31</EnergyRecovery>
+    <TotalStatSum>150</TotalStatSum>
+    <CompareThisStat xsi:nil="true" />
+  </Card>
+  <Card>
+    <CardName>Slaughterhouse waste</CardName>
+    <Degradability>67</Degradability>
+    <Toxicity>72</Toxicity>
+    <Recyclability>62</Recyclability>
+    <EnergyRecovery>34</EnergyRecovery>
+    <TotalStatSum>235</TotalStatSum>
     <CompareThisStat xsi:nil="true" />
   </Card>
 </ArrayOfCard>
