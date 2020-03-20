@@ -34,18 +34,20 @@ namespace GarbageCardGame
         public static void SerializeToXml(List<Card> cards, string filePath)
         {
             XmlSerializer XMLSerializer = new XmlSerializer(typeof(List<Card>));
-            TextWriter textWriter = new StreamWriter(filePath);
-            XMLSerializer.Serialize(textWriter, cards);
-            textWriter.Close();
+            using (TextWriter textWriter = new StreamWriter(filePath))
+            {
+                XMLSerializer.Serialize(textWriter, cards);
+            }
         }
 
         public static List<Card> DeserializeFromXml(string filePath)
         {
             XmlSerializer XMLDeserializer = new XmlSerializer(typeof(List<Card>));
-            TextReader textReader = new StreamReader(filePath);
             List<Card> cards;
-            cards = (List<Card>)XMLDeserializer.Deserialize(textReader);
-            textReader.Close();
+            using (TextReader textReader = new StreamReader(filePath))
+            {
+                cards = (List<Card>)XMLDeserializer.Deserialize(textReader);
+            }
             return cards;
         }
     }
