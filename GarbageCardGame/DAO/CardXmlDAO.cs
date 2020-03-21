@@ -1,5 +1,4 @@
 ﻿using GarbageCardGame.Model;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -8,9 +7,16 @@ namespace GarbageCardGame.DAO
 {
     class CardXmlDAO : ICardDAO
     {
+        private string Path { get; set; }
+
+        public CardXmlDAO(string path)
+        {
+            Path = path;
+        }
+
         public List<Card> GetDeck()
         {
-            List<Card> deserializedCards = DeserializeFromXml(Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.xml");
+            List<Card> deserializedCards = DeserializeFromXml(Path);
             return deserializedCards;
         }
 
