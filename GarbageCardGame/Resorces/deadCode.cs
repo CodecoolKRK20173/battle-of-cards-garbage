@@ -30,7 +30,23 @@ namespace GarbageCardGame.Resorces
             {
                 Console.WriteLine($"{card.CardName}, {card.TotalStatSum}");
             }
+
+            Deck allCadrds = new Deck(new CardDAO(Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.csv"));
+            SerializeToXml(allCadrds.CardDeck, Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.xml");
+
+            List<Card> deserializedCards = DeserializeFromXml(Environment.CurrentDirectory + @"..\..\..\..\Resorces\waste.xml");
+            Console.WriteLine(deserializedCards[0]);
             //TESTING ZONE END
+        }
+
+        private static List<Card> DeserializeFromXml(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void SerializeToXml(List<Card> cardDeck, string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

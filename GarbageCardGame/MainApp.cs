@@ -9,7 +9,7 @@ namespace GarbageCardGame
         {
             ViewGarbage View = new ViewGarbage();
             GameController Game = new GameController();
-            
+
             View.Print("Welcome to the game.\nThe cards are already dealt.\nIt is Player1 turn...");
             System.Threading.Thread.Sleep(3000);
             while (!Game.AnyPlayerHasWon())
