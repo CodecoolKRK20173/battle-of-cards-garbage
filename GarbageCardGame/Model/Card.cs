@@ -3,15 +3,20 @@ using System.Text;
 
 namespace GarbageCardGame.Model
 {
-    class Card : IComparable<Card>
+    public class Card : IComparable<Card>
     {
-        public string CardName { get; private set; }
-        public int Degradability { get; private set; }
-        public int Toxicity { get; private set; }
-        public int Recyclability { get; private set; }
-        public int EnergyRecovery { get; private set; }
-        public int TotalStatSum { get; private set; }
+        public string CardName { get; set; }
+        public int Degradability { get; set; }
+        public int Toxicity { get; set; }
+        public int Recyclability { get; set; }
+        public int EnergyRecovery { get; set; }
+        public int TotalStatSum { get; set; }
         public int? CompareThisStat { get; set; }
+
+        public Card()
+        {
+
+        }
 
         public Card(string cardName, int[] numericalStats)
         {

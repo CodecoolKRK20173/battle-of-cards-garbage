@@ -32,5 +32,45 @@ namespace GarbageCardGame.Model
         {
             CardsInHand.Remove(card);
         }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+            if (!(obj is Hand))
+            {
+                return false;
+            }
+            return this.CalculateTotalHandValue().Equals(((Hand)obj).CalculateTotalHandValue());
+        }
+
+        private int CalculateTotalHandValue()
+        {
+            int totalHandValue = 0;
+            foreach (var card in CardsInHand)
+            {
+                totalHandValue += card.TotalStatSum;
+            }
+            return totalHandValue;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                const int HashingBase = 10711;
+                const int HashingMultiplier = 10739;
+
+                int hash = HashingBase;
+                hash = (hash * HashingMultiplier) ^ CalculateTotalHandValue();
+                return hash;
+            }
+        }
     }
 }
