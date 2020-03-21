@@ -20,5 +20,3 @@ namespace GarbageCardGame
         }
     }
 }
-
-//TODO override hashCode() method and equals() method
